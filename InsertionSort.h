@@ -15,10 +15,10 @@ void insertionSort( int arr[], int dimension ){
         before = i-1;
 
         while(before>= 0 && arr[before]>elements){
-            arr[before+1]=arr[before];
-            before--;
+            arr[before+1]=arr[before]; // I shift elements to the right
+            before--; // i move the elements previous on the the left
         }
-        arr[before+1]=elements;
+        arr[before+1]=elements; // plece the current element in its correct sorted position
     }
 }
 
