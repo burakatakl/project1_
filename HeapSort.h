@@ -4,6 +4,12 @@
 #define PROJECT1__HEAPSORT_H
 #include <iostream>
 #include <vector>
+void swap(std::vector<int>&arr,int i,int j ){
+    int elemnt = arr[i];
+    arr[i] = arr[j];
+    arr[j]= elemnt;
+}
+
  void heapify (std::vector<int>&arr, int a, int i){
     int leftside = 2*i+1;
     int rightside= 2*i+2;
