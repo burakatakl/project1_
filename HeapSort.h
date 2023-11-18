@@ -24,7 +24,20 @@ void swap(std::vector<int>&arr,int i,int j ){
      }
 }
 
+void buildingheap (std::vector<int>&arr,int a){
+    for (int i= (a/2)-1;i>=0;i--)
+        heapify(arr,a,i);
+}
+void heapsort(std::vector<int>&arr, int a){
 
+    buildingheap(arr, a);
+    for ( int i =a-1; i>+0; i--){
+        swap(arr,0,i);
+        heapify(arr,i,0);
+
+    }
+
+}
 
 
 #endif //PROJECT1__HEAPSORT_H
