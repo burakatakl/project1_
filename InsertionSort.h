@@ -1,0 +1,8 @@
+//
+// Created by BURAK on 18/11/2023.
+//
+
+#ifndef PROJECT1__INSERTIONSORT_H
+#define PROJECT1__INSERTIONSORT_H
+
+#endif //PROJECT1__INSERTIONSORT_H
