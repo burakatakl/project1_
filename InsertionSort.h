@@ -5,20 +5,22 @@
 #define PROJECT1__INSERTIONSORT_H
 
 #include <iostream>
+#include <vector>
 
-void insertionSort( int arr[], int dimension ){
+
+void insertionSort(std::vector<int> &arr  ){
     int elements;
     int before;
 
-    for(int i=1;i<dimension; i++ ){
+    for(size_t i=1;i<arr.size(); i++ ){
         elements = arr[i];
         before = i-1;
 
         while(before>= 0 && arr[before]>elements){
             arr[before+1]=arr[before]; // I shift elements to the right
-            before--; // i move the elements previous on the the left
+            before--; // i move the elements previous on the  left
         }
-        arr[before+1]=elements; // plece the current element in its correct sorted position
+        arr[before+1]=elements; // place the current element in its correct sorted position
     }
 }
 
