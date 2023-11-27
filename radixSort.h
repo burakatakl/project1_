@@ -17,10 +17,10 @@ void radixSort(std::vector<int>&arr){
             output[count[(arr[i]/tt)%10]-1]=arr[i];
             count[(arr[i]/tt)%10]--; // i create output string
         }
-
+        for(int i =0; i<x;i++)
+            arr[i]=output[i]; // i copied output string too arr string
 
     }
-
 }
 
 
