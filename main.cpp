@@ -3,18 +3,18 @@
 #include "InsertionSort.h"
 #include <vector>
 #include "quicksort.h"
-
+#include "radixSort.h"
 
 int main() {
 
 
     std::vector<int> IS={12,3,5,6,7,8,9,22};
     insertionSort(IS);
-    std::cout<<" InsertionSort: "<<std::endl;
-    for (auto it:IS) {
+    std::cout<<"InsertionSort: "<<std::endl;
+    for (auto it:IS)
         std::cout << it << " ";
         std::cout << std::endl;
-    }
+
     std::cout<<"heapsort: "<<std::endl;
     std::vector HP = {1,5,7,2,8};
     heapsort(HP, HP.size());
@@ -27,9 +27,24 @@ int main() {
     int size=QS.size();
     quickSort(QS,0,size-1);
     std::cout<<"QuickSort:"<<std::endl;
-    for(auto it:QS){
+    for(auto it:QS)
+        std::cout<<it<<" ";
+    std::cout<<std::endl;
+
+
+    std::vector<int> RS={11,33,22,1,4,5,6,26};
+    radixSort(RS);
+    std::cout<<"RadixSort: "<<std::endl;
+    for( auto it:RS){
         std::cout<<it<<" ";
     }
+
+
+
+
+
+
+
 
 
 
