@@ -4,19 +4,27 @@
 #include <vector>
 #include "quicksort.h"
 #include "radixSort.h"
+#include <chrono>
 
 int main() {
 
 
-    std::vector<int> IS={12,3,5,6,7,8,9,22};
-    insertionSort(IS);
-    std::cout<<"InsertionSort: "<<std::endl;
-    for (auto it:IS)
-        std::cout << it << " ";
-        std::cout << std::endl;
+    std::vector<int> testMyVectors={1,2,26,77,22,6,89,10,22,31};
+
+    std::vector<int> testInsertionSort= testMyVectors;
+    auto startInsertionSort = std::chrono::steady_clock::now();
+    insertionSort(testInsertionSort);
+    auto endInsertionSort=std::chrono::steady_clock::now();
+    std::chrono::duration<double> durationInsertionSort=endInsertionSort-startInsertionSort;
+    std::cout<<"InsertionSort time is: "<<durationInsertionSort.count()<<std::endl;
+
+    std::cout<<" InsertionSort: ";
+    for(auto IS:testInsertionSort){
+        std::cout<<IS<<" ";
+    }
 
     std::cout<<"heapsort: "<<std::endl;
-    std::vector HP = {1,5,7,2,8};
+    std::vector HP = {1,5,7,2,8,22,33,26,55};
     heapsort(HP, HP.size());
     for(auto it : HP)
         std::cout << it << " ";
@@ -38,17 +46,6 @@ int main() {
     for( auto it:RS){
         std::cout<<it<<" ";
     }
-
-
-
-
-
-
-
-
-
-
-
 
 
     return 0;
