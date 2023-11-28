@@ -4,19 +4,15 @@
 #include <vector>
 #include "radixSort.h"
 #include "InsertionSort.h"
-
+#include "HeapSort.h"
 void myHybridSort(std::vector<int>&rd,int value ){
     if(rd.size()<value){
         insertionSort(rd);
-
-
     }
     else{
 
-        quickSort(rd,0,rd.size()-1);
-
+        heapsort(rd,rd.size());
     }
-
 }
 
 
