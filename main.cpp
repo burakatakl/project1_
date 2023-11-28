@@ -6,14 +6,18 @@
 #include "radixSort.h"
 #include <chrono>
 #include <random>
+#include "myHybridSort.h"
 
 int main() {
     std::random_device rd;
     std::mt19937 g(rd());
     std::vector<int> testMyVectors;
-    for (int i=0;i<10;i++){
-        testMyVectors.push_back(g()%100);
+    const int a=10;
+    for (int i=0;i<a;i++){
+        testMyVectors.push_back(g()%100);// random numbers (0 to 99)
     }
+    std::shuffle(testMyVectors.begin(),testMyVectors.end(),g);
+
 
     std::vector<int> testInsertionSort= testMyVectors;
     auto startInsertionSort = std::chrono::steady_clock::now();
@@ -44,7 +48,7 @@ int main() {
     auto startQuickSort=std::chrono::steady_clock::now();
     quickSort(testQuickSort,0,testQuickSort.size()-1);
     auto endQuicSort=std::chrono::steady_clock::now();
-    std::chrono::duration<double>durationQuicksort=endHeapSort-startHeapSort;
+    std::chrono::duration<double>durationQuicksort=endQuicSort-startQuickSort;
     std::cout<<"QuickSort time is: "<<durationQuicksort.count()<<std::endl;
     int size=testMyVectors.size();
     quickSort(testMyVectors,0,testQuickSort.size()-1);
@@ -58,13 +62,24 @@ int main() {
     auto startRadixSort=std::chrono::steady_clock::now();
     radixSort(testRadixSort);
     auto endRadixSort=std::chrono::steady_clock::now();
-    std::chrono::time_point<std::chrono::steady_clock, std::chrono::duration<long long int, std::ratio<1, 1000000000>>> durationRadixSort= endRadixSort=startRadixSort;//in this comment my complair make it is self
-    std::cout<<"RadixSort time is: "<<durationQuicksort.count()<<std::endl;
+    std::chrono::duration<double>durationRadixSort=endRadixSort-startRadixSort;
+    std::cout<<"RadixSort time is: "<<durationRadixSort.count()<<std::endl;
     radixSort(testMyVectors);
     std::cout<<"RadixSort: ";
-    for( auto it:testMyVectors){
+    for( auto it:testMyVectors)
         std::cout<<it<<" ";
-    }
+    std::cout<<std::endl;
+
+    std::vector<int>testMyHybridSort=testMyVectors;
+    auto startHybridSort=std::chrono::steady_clock::now();
+    myHybridSort(testMyHybridSort,30);
+    auto endHybridSort=std::chrono::steady_clock::now();
+    std::chrono::duration<double>durationHybridSort=endHybridSort-startHybridSort;
+    std::cout<<"HybridSort time is: "<<durationHybridSort.count()<<std::endl;
+    std::cout<<"HybridSort: ";
+    for(auto it: testMyHybridSort)
+        std::cout<<it<<" ";
+
 
 
     return 0;
