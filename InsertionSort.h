@@ -1,5 +1,3 @@
-//
-// Created by BURAK on 18/11/2023.
 
 #ifndef PROJECT1__INSERTIONSORT_H
 #define PROJECT1__INSERTIONSORT_H
@@ -8,11 +6,11 @@
 #include <vector>
 
 
-void insertionSort(std::vector<int> &arr  ){
-    int elements;
-    int before;
+void insertionSort(std::vector<int> &arr  ){ //i am used vector in integer arr
+    int elements; //sembol of element
+    int before;// it means before element
 
-    for(size_t i=1;i<arr.size(); i++ ){
+    for(size_t i=1;i<arr.size(); i++ ){ // i cretated loop here i can see element is equal all array[i] and deleted before element
         elements = arr[i];
         before = i-1;
 
@@ -27,4 +25,4 @@ void insertionSort(std::vector<int> &arr  ){
 
 
 
-#endif //PROJECT1__INSERTIONSORT_H
+#endif

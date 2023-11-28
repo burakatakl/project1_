@@ -7,7 +7,7 @@ int divide(std::vector<int>&arr,int lowest, int highest){
     int middle=arr[highest];
     int i=lowest-1;//index of smaller one
     for(int w=lowest;w<=highest-1;w++){
-        if(arr[w]<middle){//if this element is smaller one i am usung swap
+        if(arr[w]<middle){//if this element is smaller one i am using swap
             i++;
             std::swap(arr[i],arr[w]);
         }

@@ -9,31 +9,33 @@
 #include "myHybridSort.h"
 
 int main() {
-    std::random_device rd;
-    std::mt19937 g(rd());
-    std::vector<int> testMyVectors;
-    const int a=100;
+    std::random_device rd;//here i can create random number and i putted name rd
+    std::mt19937 g(rd());//it is the varian of the Mersen twister algorithm
+    std::vector<int> testMyVectors;// here all random number will inside in testMvectors vecktor
+    const int a=100;// we can cahnge in here how many element
     for (int i=0;i<a;i++){
         testMyVectors.push_back(g()%100);// random numbers (0 to 99)
     }
-    std::shuffle(testMyVectors.begin(),testMyVectors.end(),g);
+    std::shuffle(testMyVectors.begin(),testMyVectors.end(),g);// here in this function i can write how many element in my random array because of "g"i can take random numbers
 
 
-    std::vector<int> testInsertionSort= testMyVectors;
-    auto startInsertionSort = std::chrono::steady_clock::now();
-    insertionSort(testInsertionSort);
-    auto endInsertionSort=std::chrono::steady_clock::now();
-    std::chrono::duration<double> durationInsertionSort=endInsertionSort-startInsertionSort;
-    std::cout<<"InsertionSort time is: "<<durationInsertionSort.count()<<std::endl;
+    std::vector<int> testInsertionSort= testMyVectors;//here i copied the testvector insertionvector
+    auto startInsertionSort = std::chrono::steady_clock::now();// here in this functiun save the start time
+    insertionSort(testInsertionSort);//i called insertion function here
+    auto endInsertionSort=std::chrono::steady_clock::now();// in this functiun ended the time line
+    std::chrono::duration<double> durationInsertionSort=endInsertionSort-startInsertionSort;// here sorting time was calculate as the diffrence between start and end
+    std::cout<<"InsertionSort time is: "<<durationInsertionSort.count()<<std::endl;// we can see in here calculation result
     std::cout<<"InsertionSort: ";
     for(auto IS:testInsertionSort)
-        std::cout<<IS<<" ";
+        std::cout<<IS<<" ";// here we can see the result of insertionsort
     std::cout<<std::endl;
+
+    //i used same things for thee other sorting algortims too
 
 
     std::vector<int> testHeapSort=testMyVectors;
     auto startHeapSort=std::chrono::steady_clock::now();
-    heapsort(testHeapSort,testHeapSort.size());
+    heapsort(testHeapSort,testHeapSort.size());// i called heapsort function here
     auto endHeapSort=std::chrono::steady_clock::now();
     std::chrono::duration<double>durationHeapSort=endHeapSort-startHeapSort;
     std::cout<<"HeapSort time is: "<<durationHeapSort.count()<<std::endl;
@@ -72,7 +74,7 @@ int main() {
 
     std::vector<int>testMyHybridSort=testMyVectors;
     auto startHybridSort=std::chrono::steady_clock::now();
-    myHybridSort(testMyHybridSort,30);
+    myHybridSort(testMyHybridSort,30); // i can changed here to array size here
     auto endHybridSort=std::chrono::steady_clock::now();
     std::chrono::duration<double>durationHybridSort=endHybridSort-startHybridSort;
     std::cout<<"HybridSort time is: "<<durationHybridSort.count()<<std::endl;
@@ -84,3 +86,4 @@ int main() {
 
     return 0;
 }
+

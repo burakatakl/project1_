@@ -4,7 +4,7 @@
 #include <vector>
 
 void radixSort(std::vector<int>&arr){
-    int maxElement=*std::max_element(arr.begin(),arr.end());// here i am find maxuim element
+    int maxElement=*std::max_element(arr.begin(),arr.end());// here i am find maxuim element i take max elemet for a pointer
 
     for(int tt=1; maxElement/tt>0; tt*=10){
         int x =arr.size();
