@@ -5,11 +5,15 @@
 #include "quicksort.h"
 #include "radixSort.h"
 #include <chrono>
+#include <random>
 
 int main() {
-
-
-    std::vector<int> testMyVectors={1,2,26,77,22,6,89,10,22,31};
+    std::random_device rd;
+    std::mt19937 g(rd());
+    std::vector<int> testMyVectors;
+    for (int i=0;i<10;i++){
+        testMyVectors.push_back(g()%100);
+    }
 
     std::vector<int> testInsertionSort= testMyVectors;
     auto startInsertionSort = std::chrono::steady_clock::now();
