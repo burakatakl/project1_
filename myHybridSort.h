@@ -6,6 +6,12 @@
 #include "quicksort.h"
 
 void myHybridSort(std::vector<int>&arr,int value ){
+    if(arr.size()<value){
+        radixSort(arr);
+    }
+    else{
+        quickSort(arr,0,arr.size()-1);
+    }
 
 }
 
