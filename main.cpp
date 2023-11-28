@@ -17,7 +17,7 @@ int main() {
     auto endInsertionSort=std::chrono::steady_clock::now();
     std::chrono::duration<double> durationInsertionSort=endInsertionSort-startInsertionSort;
     std::cout<<"InsertionSort time is: "<<durationInsertionSort.count()<<std::endl;
-    std::cout<<" InsertionSort: ";
+    std::cout<<"InsertionSort: ";
     for(auto IS:testInsertionSort)
         std::cout<<IS<<" ";
     std::cout<<std::endl;
@@ -36,11 +36,16 @@ int main() {
     std::cout<<std::endl;
 
 
-    std::vector<int> QS={22,11,55,12,1,3,4,88};
-    int size=QS.size();
-    quickSort(QS,0,size-1);
-    std::cout<<"QuickSort:"<<std::endl;
-    for(auto it:QS)
+    std::vector<int>testQuickSort=testMyVectors;
+    auto startQuickSort=std::chrono::steady_clock::now();
+    quickSort(testQuickSort,0,testQuickSort.size()-1);
+    auto endQuicSort=std::chrono::steady_clock::now();
+    std::chrono::duration<double>durationQuicksort=endHeapSort-startHeapSort;
+    std::cout<<"QuickSort time is: "<<durationQuicksort.count()<<std::endl;
+    int size=testMyVectors.size();
+    quickSort(testMyVectors,0,testQuickSort.size()-1);
+    std::cout<<"QuickSort:";
+    for(auto it:testMyVectors)
         std::cout<<it<<" ";
     std::cout<<std::endl;
 
