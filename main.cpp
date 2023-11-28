@@ -12,7 +12,7 @@ int main() {
     std::random_device rd;
     std::mt19937 g(rd());
     std::vector<int> testMyVectors;
-    const int a=10;
+    const int a=100;
     for (int i=0;i<a;i++){
         testMyVectors.push_back(g()%100);// random numbers (0 to 99)
     }
