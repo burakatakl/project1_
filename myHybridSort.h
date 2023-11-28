@@ -3,14 +3,18 @@
 #include <iostream>
 #include <vector>
 #include "radixSort.h"
-#include "quicksort.h"
+#include "InsertionSort.h"
 
-void myHybridSort(std::vector<int>&arr,int value ){
-    if(arr.size()<value){
-        radixSort(arr);
+void myHybridSort(std::vector<int>&rd,int value ){
+    if(rd.size()<value){
+        insertionSort(rd);
+
+
     }
     else{
-        quickSort(arr,0,arr.size()-1);
+
+        quickSort(rd,0,rd.size()-1);
+
     }
 
 }
