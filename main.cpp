@@ -12,13 +12,13 @@ int main() {
     std::random_device rd;//here i can create random number and i putted name rd
     std::mt19937 g(rd());//it is the varian of the Mersen twister algorithm
     std::vector<int> testMyVectors;// here all random number will inside in testMvectors vecktor
-    const int a=100;// we can cahnge in here how many element
+    const int a=10;// we can cahnge in here how many element
     for (int i=0;i<a;i++){
         testMyVectors.push_back(g()%100);// random numbers (0 to 99)
     }
     std::shuffle(testMyVectors.begin(),testMyVectors.end(),g);// here in this function i can write how many element in my random array because of "g"i can take random numbers
 
-
+    //insertionsort
     std::vector<int> testInsertionSort= testMyVectors;//here i copied the testvector insertionvector
     auto startInsertionSort = std::chrono::steady_clock::now();// here in this functiun save the start time
     insertionSort(testInsertionSort);//i called insertion function here
@@ -30,9 +30,9 @@ int main() {
         std::cout<<IS<<" ";// here we can see the result of insertionsort
     std::cout<<std::endl;
 
-    //i used same things for thee other sorting algortims too
+    //i used same things for the other sorting algortims too
 
-
+    //heapsort
     std::vector<int> testHeapSort=testMyVectors;
     auto startHeapSort=std::chrono::steady_clock::now();
     heapsort(testHeapSort,testHeapSort.size());// i called heapsort function here
@@ -45,7 +45,7 @@ int main() {
         std::cout << it << " ";
     std::cout<<std::endl;
 
-
+    //quıcksort
     std::vector<int>testQuickSort=testMyVectors;
     auto startQuickSort=std::chrono::steady_clock::now();
     quickSort(testQuickSort,0,testQuickSort.size()-1);
@@ -59,7 +59,7 @@ int main() {
         std::cout<<it<<" ";
     std::cout<<std::endl;
 
-
+    //radixsort
     std::vector<int>testRadixSort=testMyVectors;
     auto startRadixSort=std::chrono::steady_clock::now();
     radixSort(testRadixSort);
@@ -72,6 +72,7 @@ int main() {
         std::cout<<it<<" ";
     std::cout<<std::endl;
 
+    //hybridsort
     std::vector<int>testMyHybridSort=testMyVectors;
     auto startHybridSort=std::chrono::steady_clock::now();
     myHybridSort(testMyHybridSort,30); // i can changed here to array size here
