@@ -17,16 +17,21 @@ int main() {
     auto endInsertionSort=std::chrono::steady_clock::now();
     std::chrono::duration<double> durationInsertionSort=endInsertionSort-startInsertionSort;
     std::cout<<"InsertionSort time is: "<<durationInsertionSort.count()<<std::endl;
-
     std::cout<<" InsertionSort: ";
-    for(auto IS:testInsertionSort){
+    for(auto IS:testInsertionSort)
         std::cout<<IS<<" ";
-    }
+    std::cout<<std::endl;
 
-    std::cout<<"heapsort: "<<std::endl;
-    std::vector HP = {1,5,7,2,8,22,33,26,55};
-    heapsort(HP, HP.size());
-    for(auto it : HP)
+
+    std::vector<int> testHeapSort=testMyVectors;
+    auto startHeapSort=std::chrono::steady_clock::now();
+    heapsort(testHeapSort,testHeapSort.size());
+    auto endHeapSort=std::chrono::steady_clock::now();
+    std::chrono::duration<double>durationHeapSort=endHeapSort-startHeapSort;
+    std::cout<<"HeapSort time is: "<<durationHeapSort.count()<<std::endl;
+    std::cout<<"heapsort: ";
+    heapsort(testMyVectors, testMyVectors.size());
+    for(auto it : testMyVectors)
         std::cout << it << " ";
     std::cout<<std::endl;
 
