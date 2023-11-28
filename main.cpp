@@ -50,10 +50,15 @@ int main() {
     std::cout<<std::endl;
 
 
-    std::vector<int> RS={11,33,22,1,4,5,6,26};
-    radixSort(RS);
-    std::cout<<"RadixSort: "<<std::endl;
-    for( auto it:RS){
+    std::vector<int>testRadixSort=testMyVectors;
+    auto startRadixSort=std::chrono::steady_clock::now();
+    radixSort(testRadixSort);
+    auto endRadixSort=std::chrono::steady_clock::now();
+    std::chrono::time_point<std::chrono::steady_clock, std::chrono::duration<long long int, std::ratio<1, 1000000000>>> durationRadixSort= endRadixSort=startRadixSort;//in this comment my complair make it is self
+    std::cout<<"RadixSort time is: "<<durationQuicksort.count()<<std::endl;
+    radixSort(testMyVectors);
+    std::cout<<"RadixSort: ";
+    for( auto it:testMyVectors){
         std::cout<<it<<" ";
     }
 
