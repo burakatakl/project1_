@@ -17,4 +17,4 @@ void myHybridSort(std::vector<int>&rd,int value ){
 //thats why in this hybrid sort function is the best one is always fastes one
 
 
-#endif //PROJECT1__MYHYBRIDSORT_H
+#endif

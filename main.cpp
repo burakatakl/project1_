@@ -12,7 +12,7 @@ int main() {
     std::random_device rd;//here i can create random number and i putted name rd
     std::mt19937 g(rd());//it is the varian of the Mersen twister algorithm
     std::vector<int> testMyVectors;// here all random number will inside in testMvectors vecktor
-    const int a=10;// we can cahnge in here how many element
+    const int a=1;// we can cahnge in here how many element
     for (int i=0;i<a;i++){
         testMyVectors.push_back(g()%100);// random numbers (0 to 99)
     }
